@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -21,6 +22,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class AccountFragment extends Fragment {
     private static final String TAG = "AccountFragment";
     private FirebaseAuth.AuthStateListener mAuthStateListener;
+    public TextView name;
     private Button mSignOut;
 
     @Nullable
@@ -28,15 +30,15 @@ public class AccountFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_account, container, false);
         mSignOut = (Button) view.findViewById(R.id.sign_out);
-
+        name = (TextView) view.findViewById(R.id.aemail);
         setupFirebaseListener();
-
         mSignOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: attempting to sign out the user.");
                 FirebaseAuth.getInstance().signOut();
             }
+
         });
         return view;
     }
@@ -45,10 +47,12 @@ public class AccountFragment extends Fragment {
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                String aname = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+                name.setText(aname);
                 FirebaseUser user = firebaseAuth.getCurrentUser();
-                if(user != null){
+                if (user != null) {
                     Log.d(TAG, "onAuthStateChanged: signed_in: " + user.getUid());
-                }else{
+                } else {
                     Log.d(TAG, "onAuthStateChanged: signed_out");
                     Toast.makeText(getActivity(), "Signed out", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getActivity(), LoginActivity.class);

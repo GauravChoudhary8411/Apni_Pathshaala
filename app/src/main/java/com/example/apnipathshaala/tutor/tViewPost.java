@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.example.apnipathshaala.R;
 import com.example.apnipathshaala.models.Post;
 import com.example.apnipathshaala.utils.SquareImageView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -70,13 +71,15 @@ public class tViewPost extends AppCompatActivity {
                     mContactSeller.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            Intent intent = new Intent (Intent.ACTION_SEND);
+
+                            Intent intent = new Intent(Intent.ACTION_SEND);
                             intent.setType("Hello. I would like to learn");
                             intent.putExtra(Intent.EXTRA_EMAIL, new String[]{mPost.getContact_email()});
                             intent.putExtra(Intent.EXTRA_SUBJECT, "I would like to learn about ");
                             intent.setPackage("com.google.android.gm");
-                                startActivity(intent);
-                            }
+                            startActivity(intent);
+                        }
+
                     });
                 }
             }

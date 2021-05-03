@@ -1,14 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/up"
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/sign_out"
-        android:text="sign out"
-        android:background="@drawable/bg_btn"
-        android:layout_marginTop="50dp"
-        android:layout_centerHorizontal="true"/>
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="You wanna go?"
+            android:textColor="#fff"
+            android:textSize="20sp"></TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Click on \nSign out"
+            android:textColor="#fff"
+            android:textSize="45sp"
+            android:textStyle="bold"></TextView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="50dp">
+
+            <TextView
+                android:id="@+id/aemail"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_edt"
+                android:gravity="center_vertical"
+                android:hint="Prince Edward"
+                android:inputType="textPersonName"
+                android:paddingLeft="20dp"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:background="#fff"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="Your Signed in Email"
+                android:textAllCaps="true"
+                android:textColor="#000"
+                android:textSize="12sp"></TextView>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/sign_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/bg_btn"
+            android:text="sign out" />
+        <!--      <Button
+                  android:id="@+id/sign_out"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_centerHorizontal="true"
+                  android:layout_marginTop="50dp"
+                  android:background="@drawable/bg_btn"
+                  android:text="sign out" />
+
+          </LinearLayout>
+      </LinearLayout>
+          -->
+    </LinearLayout>
 </RelativeLayout>

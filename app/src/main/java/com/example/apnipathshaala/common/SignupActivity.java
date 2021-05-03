@@ -127,7 +127,7 @@ public class SignupActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 Toast.makeText(getApplicationContext(),
-                                        "Registration successful!",
+                                        "Registration successful! Check your email for verification link",
                                         Toast.LENGTH_LONG)
                                         .show();
                                 // hide the progress bar

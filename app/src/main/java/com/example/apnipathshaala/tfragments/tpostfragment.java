@@ -29,6 +29,7 @@ import com.example.apnipathshaala.R;
 import com.example.apnipathshaala.models.Post;
 import com.example.apnipathshaala.sale.SearchActivity;
 import com.example.apnipathshaala.sfragments.SelectPhotoDialog;
+import com.example.apnipathshaala.tutor.Tutor;
 import com.example.apnipathshaala.utils.RotateBitmap;
 import com.example.apnipathshaala.utils.UniversalImageLoader;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -303,7 +304,7 @@ public class tpostfragment extends Fragment implements SelectPhotoDialog.OnPhoto
                         .setValue(post);
 
                 resetFields();
-                Intent i=new Intent(getActivity(), SearchActivity.class);
+                Intent i = new Intent(getActivity(), Tutor.class);
                 startActivity(i);
             }
         }).addOnFailureListener(new OnFailureListener() {
