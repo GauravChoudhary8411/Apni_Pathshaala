@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".sale.SearchActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+            <EditText
+                android:layout_margin="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_search"
+                android:hint="search..."
+                android:imeOptions="actionDone"
+                android:inputType="textImeMultiLine"
+                android:maxLines="1"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingRight="10dp"
+                android:paddingLeft="20dp"
+                android:textSize="14sp"
+                android:drawableRight="@drawable/ic_baseline_search_24"
+                android:id="@+id/input_search"
+                android:textAllCaps="true"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/input_search"
+        android:id="@+id/recyclerView"
+        android:scrollbars="vertical"
+        android:background="#E8E8E8">
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fcontainer"
+        android:visibility="gone"/>
+</RelativeLayout>

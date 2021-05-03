@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".common.SplashActivity"
+    android:background="@drawable/bg_gradient"
+    android:padding="10dp">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/applogo"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:id="@+id/logo"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="APNI"
+        android:id="@+id/apni"
+        android:textSize="50sp"
+        android:textColor="#FFFFFF"
+        android:layout_below="@id/logo"
+        android:layout_centerInParent="true"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pathshaala"
+        android:id="@+id/pathshaala"
+        android:textSize="50sp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_below="@id/apni"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>

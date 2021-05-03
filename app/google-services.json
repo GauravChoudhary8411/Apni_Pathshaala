@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "764948341287",
+    "project_id": "apnipathshaala-125ad",
+    "storage_bucket": "apnipathshaala-125ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:764948341287:android:644a45c871fbd28f7c2402",
+        "android_client_info": {
+          "package_name": "com.example.apnipathshaala"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "764948341287-0kka3so9m7nhvbodhfdp336albojbhii.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.apnipathshaala",
+            "certificate_hash": "74c87f59131002108e7312d288c0d3e1f43c33fc"
+          }
+        },
+        {
+          "client_id": "764948341287-3ailjj049352iikcedn9h56u2rqnvi79.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0UYiQRWdSs-1RHB2Cm7_9tJsO5zLn_Mc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "764948341287-3ailjj049352iikcedn9h56u2rqnvi79.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
