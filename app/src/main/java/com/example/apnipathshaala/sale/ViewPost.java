@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.apnipathshaala.R;
 import com.example.apnipathshaala.models.Post;
@@ -28,6 +29,7 @@ public class ViewPost extends AppCompatActivity {
 
     private TextView mContactSeller, mTitle, mDescription, mPrice, mLocation, mSavePost,memail,mcity,mstate,mcountry;
     SquareImageView imageView;
+    Post mPost;
 
 
     DatabaseReference reference;
@@ -54,6 +56,9 @@ public class ViewPost extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
+                    mPost=snapshot.getValue(Post.class);
+
+
                     String title=snapshot.child("title").getValue().toString();
                     String Imageurl=snapshot.child("image").getValue().toString();
                     String desc=snapshot.child("description").getValue().toString();
@@ -75,10 +80,15 @@ public class ViewPost extends AppCompatActivity {
                     mContactSeller.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            Intent emailIntent = new Intent(Intent.ACTION_SEND);
-                            emailIntent.setType("plain/text");
-                            emailIntent.putExtra(Intent.EXTRA_EMAIL, email);
-                            startActivity(emailIntent);
+                            Intent intent = new Intent (Intent.ACTION_SEND);
+                            intent.setType("Hello. I would like to learn");
+                            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{mPost.getContact_email()});
+                            intent.putExtra(Intent.EXTRA_SUBJECT, "I would like to learn about ");
+                            intent.setPackage("com.google.android.gm");
+                            if (intent.resolveActivity(getPackageManager())!=null)
+                                startActivity(intent);
+                            else
+                                Toast.makeText(getApplicationContext(),"Gmail App is not installed", Toast.LENGTH_SHORT).show();
                             }
                         });
                     }
