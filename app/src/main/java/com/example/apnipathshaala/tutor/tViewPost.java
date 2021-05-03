@@ -60,7 +60,6 @@ public class tViewPost extends AppCompatActivity {
                     String city = snapshot.child("city").getValue().toString();
                     String state = snapshot.child("state_province").getValue().toString();
                     String country = snapshot.child("country").getValue().toString();
-                    String email = snapshot.child("contact_email").getValue().toString();
                     Picasso.get().load(Imageurl).into(imageView);
                     mTitle.setText(title);
                     mDescription.setText(desc);
@@ -76,11 +75,8 @@ public class tViewPost extends AppCompatActivity {
                             intent.putExtra(Intent.EXTRA_EMAIL, new String[]{mPost.getContact_email()});
                             intent.putExtra(Intent.EXTRA_SUBJECT, "I would like to learn about ");
                             intent.setPackage("com.google.android.gm");
-                            if (intent.resolveActivity(getPackageManager())!=null)
                                 startActivity(intent);
-                            else
-                                Toast.makeText(getApplicationContext(),"Gmail App is not installed", Toast.LENGTH_SHORT).show();
-                        }
+                            }
                     });
                 }
             }
