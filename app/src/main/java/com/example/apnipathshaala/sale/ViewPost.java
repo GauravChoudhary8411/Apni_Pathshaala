@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -15,6 +16,8 @@ import android.widget.Toast;
 import com.example.apnipathshaala.R;
 import com.example.apnipathshaala.models.Post;
 import com.example.apnipathshaala.utils.SquareImageView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,8 +29,7 @@ import com.squareup.picasso.Picasso;
 public class ViewPost extends AppCompatActivity {
 
     private static final String TAG = "ViewPostFragment";
-
-    private TextView mContactSeller, mTitle, mDescription, mPrice, mLocation, mSavePost,memail,mcity,mstate,mcountry;
+    private TextView mContactSeller, mTitle, mDescription, mPrice,mcity,mstate,mcountry;
     SquareImageView imageView;
     Post mPost;
 
@@ -37,6 +39,8 @@ public class ViewPost extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_post);
+
+
         imageView=findViewById(R.id.post_image);
         mContactSeller = (TextView) findViewById(R.id.post_contact);
         mTitle = (TextView) findViewById(R.id.post_title);
@@ -45,9 +49,6 @@ public class ViewPost extends AppCompatActivity {
         mcity = (TextView) findViewById(R.id.post_city);
         mstate = (TextView) findViewById(R.id.post_state);
         mcountry = (TextView) findViewById(R.id.post_country);
-
-        mSavePost = (TextView) findViewById(R.id.save_post);
-        memail=(TextView)findViewById(R.id.contact_email);
         reference= FirebaseDatabase.getInstance().getReference().child("posts");
 
         String postkey=getIntent().getStringExtra("postkey");
@@ -71,7 +72,6 @@ public class ViewPost extends AppCompatActivity {
 
                     Picasso.get().load(Imageurl).into(imageView);
                     mTitle.setText(title);
-                    memail.setText(email);
                     mDescription.setText(desc);
                     mcity.setText(city);
                     mstate.setText(", "+state);
@@ -80,16 +80,24 @@ public class ViewPost extends AppCompatActivity {
                     mContactSeller.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            Intent intent = new Intent (Intent.ACTION_SEND);
-                            intent.setType("Hello. I would like to learn");
-                            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{mPost.getContact_email()});
-                            intent.putExtra(Intent.EXTRA_SUBJECT, "I would like to learn about ");
-                            intent.setPackage("com.google.android.gm");
-                            if (intent.resolveActivity(getPackageManager())!=null)
-                                startActivity(intent);
-                            else
-                                Toast.makeText(getApplicationContext(),"Gmail App is not installed", Toast.LENGTH_SHORT).show();
+
+                            if (FirebaseAuth.getInstance().getCurrentUser().toString() != mPost.getContact_email()) {
+                                Intent intent = new Intent(Intent.ACTION_SEND);
+                                intent.setType("Hello. I would like to learn");
+                                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{mPost.getContact_email()});
+                                intent.putExtra(Intent.EXTRA_SUBJECT, "I would like to learn about ");
+                                intent.setPackage("com.google.android.gm");
+                                if (intent.resolveActivity(getPackageManager()) != null)
+                                    startActivity(intent);
+                                else
+                                    Toast.makeText(getApplicationContext(), "Gmail App is not installed", Toast.LENGTH_SHORT).show();
                             }
+                            else{
+                                Log.d(TAG,"user contact itself");
+                                Toast.makeText(getApplicationContext(), "You yourself have uploaded the product", Toast.LENGTH_LONG).show();
+                                }
+
+                        }
                         });
                     }
             }

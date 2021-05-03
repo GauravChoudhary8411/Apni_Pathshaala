@@ -31,7 +31,6 @@ public class LoginActivity extends AppCompatActivity {
     Switch lswitch;
     EditText lemail, lpassword;
     TextView forgotpassword;
-    SharedPreferences sp;
     FirebaseAuth mAuth;
     private static final String TAG = "LoginActivity";
 
@@ -66,10 +65,6 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-  /*      sp = getSharedPreferences("login", MODE_PRIVATE);
-        if (sp.getBoolean("logged", false)) {
-            goToMainActivity();
-        }*/
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -132,11 +127,4 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
-/*
-    private void goToMainActivity() {
-        Intent i=new Intent(getApplicationContext(),Homepage.class);
-        startActivity(i);
-        finish();
-
-    }*/
 }

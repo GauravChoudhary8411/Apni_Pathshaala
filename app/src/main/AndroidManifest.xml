@@ -17,7 +17,9 @@
         android:theme="@style/Theme.ApniPathshaala">
         <activity android:name=".tutor.tViewPost"></activity>
         <activity android:name=".sale.ViewPost" />
-        <activity android:name=".sale.SearchActivity" />
+        <activity android:name=".sale.SearchActivity"
+            android:windowSoftInputMode="adjustResize"
+            />
         <activity android:name=".tutor.Tutor"
             android:windowSoftInputMode="adjustResize"
             />

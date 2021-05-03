@@ -25,7 +25,7 @@ public class tViewPost extends AppCompatActivity {
 
     private static final String TAG = "ViewPostFragment";
 
-    private TextView mContactSeller, mTitle, mDescription, mPrice, mLocation, mSavePost, memail, mcity, mstate, mcountry;
+    private TextView mContactSeller, mTitle, mDescription, mPrice, mcity, mstate, mcountry;
     SquareImageView imageView;
 
     private Post mPost;
@@ -43,8 +43,6 @@ public class tViewPost extends AppCompatActivity {
         mcity = (TextView) findViewById(R.id.post_city);
         mstate = (TextView) findViewById(R.id.post_state);
         mcountry = (TextView) findViewById(R.id.post_country);
-        mSavePost = (TextView) findViewById(R.id.save_post);
-        memail = (TextView) findViewById(R.id.contact_email);
         reference = FirebaseDatabase.getInstance().getReference().child("tutor");
         String postkey = getIntent().getStringExtra("postkey");
 
@@ -69,7 +67,6 @@ public class tViewPost extends AppCompatActivity {
                     mcity.setText("Lives in " + city);
                     mstate.setText(", Will teach in " + state);
                     mcountry.setText(", After, " + country);
-                    memail.setText(email);
                     mPrice.setText("Rs." + price + "/hr");
                     mContactSeller.setOnClickListener(new View.OnClickListener() {
                         @Override
