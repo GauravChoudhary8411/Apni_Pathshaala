@@ -41,17 +41,17 @@ public class ViewPost extends AppCompatActivity {
         setContentView(R.layout.activity_view_post);
 
 
-        imageView=findViewById(R.id.post_image);
-        mContactSeller = (TextView) findViewById(R.id.post_contact);
-        mTitle = (TextView) findViewById(R.id.post_title);
-        mDescription = (TextView) findViewById(R.id.post_description);
-        mPrice = (TextView) findViewById(R.id.post_price);
-        mcity = (TextView) findViewById(R.id.post_city);
-        mstate = (TextView) findViewById(R.id.post_state);
-        mcountry = (TextView) findViewById(R.id.post_country);
-        reference= FirebaseDatabase.getInstance().getReference().child("posts");
+        imageView = findViewById(R.id.post_image);
+        mContactSeller = findViewById(R.id.post_contact);
+        mTitle = findViewById(R.id.post_title);
+        mDescription = findViewById(R.id.post_description);
+        mPrice = findViewById(R.id.post_price);
+        mcity = findViewById(R.id.post_city);
+        mstate = findViewById(R.id.post_state);
+        mcountry = findViewById(R.id.post_country);
+        reference = FirebaseDatabase.getInstance().getReference().child("posts");
 
-        String postkey=getIntent().getStringExtra("postkey");
+        String postkey = getIntent().getStringExtra("postkey");
 
         reference.child(postkey).addValueEventListener(new ValueEventListener() {
             @Override

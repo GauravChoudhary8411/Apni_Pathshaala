@@ -35,7 +35,7 @@ public class SelectPhotoDialog extends DialogFragment{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.select_photo_dialog, container, false);
 
-        TextView selectPhoto = (TextView) view.findViewById(R.id.dialogChoosePhoto);
+        TextView selectPhoto = view.findViewById(R.id.dialogChoosePhoto);
         selectPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,7 +46,7 @@ public class SelectPhotoDialog extends DialogFragment{
             }
         });
 
-        TextView takePhoto = (TextView) view.findViewById(R.id.dialogOpenCamera);
+        TextView takePhoto = view.findViewById(R.id.dialogOpenCamera);
         takePhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

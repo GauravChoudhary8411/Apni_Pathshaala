@@ -36,8 +36,8 @@ public class SearchActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-        mTabLayout = (TabLayout) findViewById(R.id.tabs);
-        mViewPager  = (ViewPager) findViewById(R.id.viewpager_container);
+        mTabLayout = findViewById(R.id.tabs);
+        mViewPager = findViewById(R.id.viewpager_container);
 
         verifyPermissions();
     }

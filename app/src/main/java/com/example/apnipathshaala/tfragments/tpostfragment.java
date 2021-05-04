@@ -113,7 +113,7 @@ public class tpostfragment extends Fragment implements SelectPhotoDialog.OnPhoto
         mCity = view.findViewById(R.id.input_city);
         mContactEmail = view.findViewById(R.id.input_email);
         mPost = view.findViewById(R.id.btn_post);
-        mProgressBar = (ProgressBar) view.findViewById(R.id.progressBar);
+        mProgressBar = view.findViewById(R.id.progressBar);
         mStateProvince.setThreshold(1);
         mStateProvince.setAdapter(adapter);
 

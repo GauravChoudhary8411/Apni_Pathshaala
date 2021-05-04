@@ -95,7 +95,7 @@ public class PostFragment extends Fragment implements SelectPhotoDialog.OnPhotoS
         mCity = view.findViewById(R.id.input_city);
         mContactEmail = view.findViewById(R.id.input_email);
         mPost = view.findViewById(R.id.btn_post);
-        mProgressBar = (ProgressBar) view.findViewById(R.id.progressBar);
+        mProgressBar = view.findViewById(R.id.progressBar);
 
         getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 

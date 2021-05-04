@@ -29,8 +29,8 @@ public class AccountFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_account, container, false);
-        mSignOut = (Button) view.findViewById(R.id.sign_out);
-        name = (TextView) view.findViewById(R.id.aemail);
+        mSignOut = view.findViewById(R.id.sign_out);
+        name = view.findViewById(R.id.aemail);
         setupFirebaseListener();
         mSignOut.setOnClickListener(new View.OnClickListener() {
             @Override

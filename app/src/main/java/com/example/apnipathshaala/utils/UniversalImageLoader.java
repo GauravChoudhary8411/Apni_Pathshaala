@@ -14,7 +14,7 @@ import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 public class UniversalImageLoader {
 
     private static final int defaultImage = R.drawable.applogo;
-    private Context mContext;
+    private final Context mContext;
 
     public UniversalImageLoader(Context context) {
         mContext = context;
