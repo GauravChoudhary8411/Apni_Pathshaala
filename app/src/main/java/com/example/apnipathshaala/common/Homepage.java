@@ -8,21 +8,24 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.apnipathshaala.R;
+import com.example.apnipathshaala.donate.donate;
 import com.example.apnipathshaala.sale.SearchActivity;
 import com.example.apnipathshaala.tutor.Tutor;
 
 public class Homepage extends AppCompatActivity {
-Button buy,tutor;
+    Button buy, tutor, donate;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
-        buy=findViewById(R.id.bsrd);
-        tutor=findViewById(R.id.tutor);
+        buy = findViewById(R.id.bsrd);
+        tutor = findViewById(R.id.tutor);
+        donate = findViewById(R.id.donate);
         buy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(getApplicationContext(), SearchActivity.class);
+                Intent i = new Intent(getApplicationContext(), SearchActivity.class);
                 startActivity(i);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);
@@ -31,12 +34,22 @@ Button buy,tutor;
         tutor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(getApplicationContext(), Tutor.class);
+                Intent i = new Intent(getApplicationContext(), Tutor.class);
                 startActivity(i);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);
             }
         });
+        donate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), com.example.apnipathshaala.donate.donate.class);
+                startActivity(i);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
+
 
     }
 

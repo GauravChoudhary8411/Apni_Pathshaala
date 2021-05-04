@@ -14,18 +14,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ApniPathshaala"
-        >
-        <activity android:name=".tutor.tViewPost"></activity>
+        android:theme="@style/Theme.ApniPathshaala">
+        <activity android:name=".donate.dViewPost"></activity>
+        <activity android:name=".donate.donate" />
+        <activity android:name=".tutor.tViewPost" />
         <activity android:name=".sale.ViewPost" />
-        <activity android:name=".sale.SearchActivity"
-            android:windowSoftInputMode="adjustResize|stateHidden"
-
-            />
-        <activity android:name=".tutor.Tutor"
-            android:windowSoftInputMode="adjustResize|stateHidden"
-
-            />
+        <activity
+            android:name=".sale.SearchActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".tutor.Tutor"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".common.Homepage"
             android:screenOrientation="portrait" />
