@@ -26,32 +26,6 @@
                 android:id="@+id/post_image"
                 android:scaleType="centerCrop"/>
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="20dp">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:id="@+id/add_watch_list"
-
-                    android:layout_centerHorizontal="true"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="save post"
-                    android:textColor="@color/white"
-                    android:layout_below="@+id/add_watch_list"
-                    android:layout_centerHorizontal="true"
-                    android:id="@+id/save_post"/>
-            </RelativeLayout>
-
-
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
