@@ -123,77 +123,12 @@
 
                     </RelativeLayout>
 
+
+
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_below="@+id/relLayout4"
-                        android:background="@color/white"
-                        android:id="@+id/relLayout5"
-                        android:padding="10dp"
-                        android:layout_marginTop="10dp">
-
-
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/input_country"
-                            android:layout_centerVertical="true"
-                            android:layout_marginLeft="10dp"
-                            android:background="@null"
-                            android:inputType="textCapWords"
-                            android:hint="Freetime After?"
-                            android:textColor="@color/black"/>
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_below="@+id/relLayout5"
-                        android:background="@color/white"
-                        android:id="@+id/relLayout6"
-                        android:padding="10dp">
-
-
-                        <AutoCompleteTextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/input_state_province"
-                            android:layout_centerVertical="true"
-                            android:layout_marginLeft="10dp"
-                            android:background="@null"
-                            android:inputType="textCapWords"
-                            android:hint="Location of teaching"
-                            android:textColor="@color/black"/>
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_below="@+id/relLayout6"
-                        android:background="@color/white"
-                        android:id="@+id/relLayout7"
-                        android:padding="10dp">
-
-
-                        <AutoCompleteTextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/input_city"
-                            android:layout_centerVertical="true"
-                            android:layout_marginLeft="10dp"
-                            android:background="@null"
-                            android:inputType="textCapWords"
-                            android:hint="Hostel number"
-                            android:textColor="@color/black"/>
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_below="@+id/relLayout7"
                         android:background="@color/white"
                         android:id="@+id/relLayout8"
                         android:padding="10dp"
@@ -209,14 +144,81 @@
                             android:background="@null"
                             android:inputType="textEmailAddress"
                             android:hint="Your contact email"
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/black" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relLayout5"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/relLayout7"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/white"
+                        android:padding="10dp">
+
+
+                        <EditText
+                            android:id="@+id/input_country"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:background="@null"
+                            android:hint="Freetime After?"
+                            android:inputType="textCapWords"
+                            android:textColor="@color/black" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relLayout6"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/relLayout8"
+                        android:background="@color/white"
+                        android:padding="10dp">
+
+
+                        <AutoCompleteTextView
+                            android:id="@+id/input_state_province"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:background="@null"
+                            android:hint="Location of teaching"
+                            android:inputType="textCapWords"
+                            android:textColor="@color/black" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relLayout7"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/relLayout6"
+                        android:background="@color/white"
+                        android:padding="10dp">
+
+
+                        <AutoCompleteTextView
+                            android:id="@+id/input_city"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:background="@null"
+                            android:hint="Hostel number"
+                            android:inputType="textCapWords"
+                            android:textColor="@color/black" />
 
                     </RelativeLayout>
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/relLayout8"
+                        android:layout_below="@+id/relLayout5"
                         android:background="@color/white"
                         android:layout_marginTop="10dp">
 
