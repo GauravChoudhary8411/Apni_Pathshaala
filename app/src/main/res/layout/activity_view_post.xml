@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/grey"
+    android:background="@drawable/bg_gradient"
     tools:context=".sale.ViewPost">
 
     <androidx.core.widget.NestedScrollView
@@ -64,7 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/post_image"
-                android:background="@color/grey">
+                android:background="#273AB5">
 
                 <TextView
                     android:layout_width="match_parent"
