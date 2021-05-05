@@ -10,6 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -47,7 +50,10 @@ public class dpostfragment extends Fragment implements SelectPhotoDialog.OnPhoto
     private static final String TAG = "PostFragment";
     //widgets
     private ImageView mPostImage;
-    private EditText mTitle, mDescription, mPrice, mCountry, mStateProvince, mCity, mContactEmail;
+    AutoCompleteTextView mStateProvince, mCity;
+    String[] lpuloc = {"Bh1", "Bh2", "Bh3", "Bh4", "Bh5", "Bh6", "Bh7", "Bh8", "Dormatory",
+            "Gh1", "Gh2", "Gh3", "Gh4", "Gh5", "Gh6", "Gh7", "Gh8", "Apartment 1",
+            "Apartment 2", "Apartment 3", "Law Gate", "Main Gate",};
     private Button mPost;
     private ProgressBar mProgressBar;
 
@@ -56,6 +62,8 @@ public class dpostfragment extends Fragment implements SelectPhotoDialog.OnPhoto
     private Uri mSelectedUri;
     private byte[] mUploadBytes;
     private double mProgress = 0;
+    String[] locofdonation = {"Hostel Donation Box", "Apartment Donation Box", "Main Gate Donation Box", "Law Gate Donation Box", "Block 13", " "};
+    private EditText mTitle, mDescription, mPrice, mCountry, mContactEmail;
 
     public static byte[] getBytesFromBitmap(Bitmap bitmap, int quality) {
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
@@ -86,7 +94,8 @@ public class dpostfragment extends Fragment implements SelectPhotoDialog.OnPhoto
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         ImageLoader.getInstance().init(ImageLoaderConfiguration.createDefault((getContext())));
-
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_dropdown_item_1line, locofdonation);
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(getContext(), android.R.layout.simple_dropdown_item_1line, lpuloc);
         View view = inflater.inflate(R.layout.dfragment_donate, container, false);
         mPostImage = view.findViewById(R.id.post_image);
         mTitle = view.findViewById(R.id.input_title);
@@ -98,6 +107,12 @@ public class dpostfragment extends Fragment implements SelectPhotoDialog.OnPhoto
         mContactEmail = view.findViewById(R.id.input_email);
         mPost = view.findViewById(R.id.btn_post);
         mProgressBar = view.findViewById(R.id.progressBar);
+
+        mStateProvince.setThreshold(1);
+        mStateProvince.setAdapter(adapter);
+
+        mCity.setThreshold(1);
+        mCity.setAdapter(adapter1);
 
         getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
@@ -115,6 +130,20 @@ public class dpostfragment extends Fragment implements SelectPhotoDialog.OnPhoto
                 SelectPhotoDialog dialog = new SelectPhotoDialog();
                 dialog.show(getFragmentManager(), getString(R.string.dialog_select_photo));
                 dialog.setTargetFragment(com.example.apnipathshaala.dfragments.dpostfragment.this, 1);
+            }
+        });
+
+        mStateProvince.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(getContext(), "Selected location of donation ", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        mCity.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(getContext(), "Selected your location", Toast.LENGTH_SHORT).show();
             }
         });
 
