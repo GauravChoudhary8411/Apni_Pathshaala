@@ -48,7 +48,7 @@ import com.squareup.picasso.Picasso;
 public class dViewPost extends AppCompatActivity {
 
     private static final String TAG = "ViewPostFragment";
-    SquareImageView imageView;
+    ImageView imageView;
     Post mPost;
     DatabaseReference reference;
     private TextView mContactSeller, mTitle, mDescription, mPrice, mcity, mstate, mcountry;

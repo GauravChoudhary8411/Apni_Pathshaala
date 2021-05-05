@@ -40,5 +40,20 @@
         android:textStyle="bold"
         android:textColor="#FFFFFF"
         android:layout_below="@id/apni"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/tagline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pathshaala"
+
+        android:layout_centerHorizontal="true"
+        android:text="For Vertos by Vertos"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="italic" />
+
+
 </RelativeLayout>

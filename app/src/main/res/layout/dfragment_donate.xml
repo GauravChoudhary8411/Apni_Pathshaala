@@ -159,7 +159,7 @@
                             android:layout_centerVertical="true"
                             android:layout_marginLeft="10dp"
                             android:background="@null"
-                            android:hint="Freetime After?"
+                            android:hint="Item suitable for ?"
                             android:inputType="textCapWords"
                             android:textColor="@color/black" />
 
@@ -181,7 +181,7 @@
                             android:layout_centerVertical="true"
                             android:layout_marginLeft="10dp"
                             android:background="@null"
-                            android:hint="Location of teaching"
+                            android:hint="Location of Dropping the item"
                             android:inputType="textCapWords"
                             android:textColor="@color/black" />
 
@@ -203,7 +203,7 @@
                             android:layout_centerVertical="true"
                             android:layout_marginLeft="10dp"
                             android:background="@null"
-                            android:hint="Hostel number"
+                            android:hint="Your Hostel number"
                             android:inputType="textCapWords"
                             android:textColor="@color/black" />
 
