@@ -36,7 +36,7 @@ public class donate extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tutor);
+        setContentView(R.layout.activity_donate);
         mTabLayout = findViewById(R.id.tabs);
         mViewPager = findViewById(R.id.viewpager_container);
 
