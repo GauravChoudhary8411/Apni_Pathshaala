@@ -45,8 +45,6 @@ import java.io.IOException;
 public class dpostfragment extends Fragment implements SelectPhotoDialog.OnPhotoSelectedListener {
 
     private static final String TAG = "PostFragment";
-    DatabaseReference Dataref;
-    StorageReference StorageRef;
     //widgets
     private ImageView mPostImage;
     private EditText mTitle, mDescription, mPrice, mCountry, mStateProvince, mCity, mContactEmail;

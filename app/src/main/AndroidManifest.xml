@@ -16,7 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ApniPathshaala">
         <activity android:name=".donate.dViewPost"></activity>
-        <activity android:name=".donate.donate" />
+        <activity
+            android:name=".donate.donate"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity android:name=".tutor.tViewPost" />
         <activity android:name=".sale.ViewPost" />
         <activity
