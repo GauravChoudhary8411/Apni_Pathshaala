@@ -22,23 +22,24 @@ import com.google.firebase.auth.FirebaseUser;
 public class AccountFragment extends Fragment {
     private static final String TAG = "AccountFragment";
     private FirebaseAuth.AuthStateListener mAuthStateListener;
-    public TextView name;
+    TextView soemail;
     private Button mSignOut;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_account, container, false);
-        mSignOut = view.findViewById(R.id.sign_out);
-        name = view.findViewById(R.id.aemail);
+        mSignOut = (Button) view.findViewById(R.id.sign_out);
+        soemail = view.findViewById(R.id.aemail);
+
         setupFirebaseListener();
+
         mSignOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: attempting to sign out the user.");
                 FirebaseAuth.getInstance().signOut();
             }
-
         });
         return view;
     }
@@ -47,11 +48,12 @@ public class AccountFragment extends Fragment {
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                String aname = FirebaseAuth.getInstance().getCurrentUser().getEmail();
-                name.setText(aname);
                 FirebaseUser user = firebaseAuth.getCurrentUser();
+
                 if (user != null) {
                     Log.d(TAG, "onAuthStateChanged: signed_in: " + user.getUid());
+                    String userEmail = user.getEmail();
+                    soemail.setText(userEmail);
                 } else {
                     Log.d(TAG, "onAuthStateChanged: signed_out");
                     Toast.makeText(getActivity(), "Signed out", Toast.LENGTH_SHORT).show();

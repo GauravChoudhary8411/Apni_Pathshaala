@@ -62,7 +62,6 @@ public class ViewPost extends AppCompatActivity {
                 if (snapshot.exists()) {
                     mPost = snapshot.getValue(Post.class);
 
-
                     String title = snapshot.child("title").getValue().toString();
                     String Imageurl = snapshot.child("image").getValue().toString();
                     String desc = snapshot.child("description").getValue().toString();
@@ -71,7 +70,6 @@ public class ViewPost extends AppCompatActivity {
                     String state = snapshot.child("state_province").getValue().toString();
                     String country = snapshot.child("country").getValue().toString();
 
-                    String email = snapshot.child("contact_email").getValue().toString();
 
                     Picasso.get().load(Imageurl).into(imageView);
                     mTitle.setText(title);
@@ -100,16 +98,6 @@ public class ViewPost extends AppCompatActivity {
                         }
                         });
                     }
-                         /*   Intent intent = new Intent(Intent.ACTION_SEND);
-                            intent.setType("plain/text");
-                            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{mPost.getContact_email()});
-                            intent.putExtra(Intent.EXTRA_SUBJECT, "Emailing link");
-                            intent.putExtra(Intent.EXTRA_TEXT, "Link is \n" +
-                                    "This is the body of the message");
-                            startActivity(Intent.createChooser(intent, ""));
-                        }
-                    });
-                }*/
             }
 
             @Override

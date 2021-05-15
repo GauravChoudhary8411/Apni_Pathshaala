@@ -75,9 +75,6 @@ public class PostFragment extends Fragment implements SelectPhotoDialog.OnPhotoS
     private byte[] mUploadBytes;
     private double mProgress = 0;
 
-    DatabaseReference Dataref;
-    StorageReference  StorageRef;
-
 
     @Nullable
     @Override
