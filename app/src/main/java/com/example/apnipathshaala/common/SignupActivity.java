@@ -70,9 +70,10 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
     }
+
     private void registerUser() {
         // show the visibility of progress bar to show loading
-        progressbar.setVisibility(View.VISIBLE);
+        //    progressbar.setVisibility(View.VISIBLE);
 
         // Take the value of two edit texts in Strings
         String email, password, cpassword, name;
@@ -151,7 +152,7 @@ public class SignupActivity extends AppCompatActivity {
                                 .show();
 
                         // hide the progress bar
-                        progressbar.setVisibility(View.GONE);
+                        //  progressbar.setVisibility(View.GONE);
                     }
                 }
             });

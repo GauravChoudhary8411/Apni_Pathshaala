@@ -49,8 +49,6 @@ public class Homepage extends AppCompatActivity {
                         R.anim.slide_out_left);
             }
         });
-
-
     }
 
     @Override

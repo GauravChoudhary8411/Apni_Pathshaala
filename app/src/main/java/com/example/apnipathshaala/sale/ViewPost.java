@@ -4,15 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.BlurMaskFilter;
-import android.graphics.Color;
-import android.graphics.Paint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -84,9 +78,9 @@ public class ViewPost extends AppCompatActivity {
 
                             if (FirebaseAuth.getInstance().getCurrentUser().toString() != mPost.getContact_email()) {
                                 Intent intent = new Intent(Intent.ACTION_SEND);
-                                intent.setType("Hello. I would like to learn");
+                                intent.setType("Hello. I would like to ");
                                 intent.putExtra(Intent.EXTRA_EMAIL, new String[]{mPost.getContact_email()});
-                                intent.putExtra(Intent.EXTRA_SUBJECT, "I would like to learn about ");
+                                intent.putExtra(Intent.EXTRA_SUBJECT, "I would like to ");
                                 intent.setPackage("com.google.android.gm");
                                     startActivity(intent);
                             }

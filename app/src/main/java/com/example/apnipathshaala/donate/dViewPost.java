@@ -116,16 +116,6 @@ public class dViewPost extends AppCompatActivity {
                         }
                     });
                 }
-                         /*   Intent intent = new Intent(Intent.ACTION_SEND);
-                            intent.setType("plain/text");
-                            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{mPost.getContact_email()});
-                            intent.putExtra(Intent.EXTRA_SUBJECT, "Emailing link");
-                            intent.putExtra(Intent.EXTRA_TEXT, "Link is \n" +
-                                    "This is the body of the message");
-                            startActivity(Intent.createChooser(intent, ""));
-                        }
-                    });
-                }*/
             }
 
             @Override

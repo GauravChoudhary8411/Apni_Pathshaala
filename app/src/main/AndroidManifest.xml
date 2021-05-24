@@ -15,7 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ApniPathshaala">
-        <activity android:name=".donate.dViewPost"></activity>
+        <activity android:name=".donate.dViewPost" />
         <activity
             android:name=".donate.donate"
             android:windowSoftInputMode="adjustResize|stateHidden" />
