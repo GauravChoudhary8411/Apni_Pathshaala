@@ -54,7 +54,6 @@
                         android:id="@+id/input_title"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"
-                        android:textAllCaps="true"
                         android:background="@null"
                         android:maxLines="2"
                         android:hint="Title"

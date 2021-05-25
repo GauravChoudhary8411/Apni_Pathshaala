@@ -54,7 +54,6 @@
                         android:hint="Title"
                         android:maxLines="2"
                         android:padding="10dp"
-                        android:textAllCaps="true"
                         android:textColor="@color/black" />
 
                 </RelativeLayout>

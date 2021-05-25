@@ -94,6 +94,7 @@ public class PostFragment extends Fragment implements SelectPhotoDialog.OnPhotoS
         mPost = view.findViewById(R.id.btn_post);
         mProgressBar = view.findViewById(R.id.progressBar);
 
+        //for keyboard
         getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
         init();
@@ -155,53 +156,6 @@ public class PostFragment extends Fragment implements SelectPhotoDialog.OnPhotoS
 
     }
 
-    public class BackgroundImageResize extends AsyncTask<Uri, Integer, byte[]> {
-
-        Bitmap mBitmap;
-
-        public BackgroundImageResize(Bitmap bitmap) {
-            if (bitmap != null) {
-                this.mBitmap = bitmap;
-            }
-        }
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            Toast.makeText(getActivity(), "compressing image", Toast.LENGTH_SHORT).show();
-            showProgressBar();
-        }
-
-        @Override
-        protected byte[] doInBackground(Uri... params) {
-            Log.d(TAG, "doInBackground: started.");
-
-            if (mBitmap == null) {
-                try {
-                    RotateBitmap rotateBitmap = new RotateBitmap();
-                    mBitmap = rotateBitmap.HandleSamplingAndRotationBitmap(getActivity(), params[0]);
-                } catch (IOException e) {
-                    Log.e(TAG, "doInBackground: IOException: " + e.getMessage());
-                }
-            }
-            byte[] bytes = null;
-            Log.d(TAG, "doInBackground: megabytes before compression: " + mBitmap.getByteCount() / 1000000);
-            bytes = getBytesFromBitmap(mBitmap, 100);
-            Log.d(TAG, "doInBackground: megabytes before compression: " + bytes.length / 1000000);
-            return bytes;
-        }
-
-        @Override
-        protected void onPostExecute(byte[] bytes) {
-            super.onPostExecute(bytes);
-            mUploadBytes = bytes;
-            hideProgressBar();
-            //execute the upload task
-            executeUploadTask();
-
-        }
-    }
-
     private void executeUploadTask() {
         Toast.makeText(getActivity(), "uploading image", Toast.LENGTH_SHORT).show();
 
@@ -248,7 +202,7 @@ public class PostFragment extends Fragment implements SelectPhotoDialog.OnPhotoS
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(getActivity(), "could not upload photo", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Check your net connection could not upload photo", Toast.LENGTH_SHORT).show();
             }
         }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
             @Override
@@ -261,6 +215,53 @@ public class PostFragment extends Fragment implements SelectPhotoDialog.OnPhotoS
                 }
             }
         });
+    }
+
+    public class BackgroundImageResize extends AsyncTask<Uri, Integer, byte[]> {
+
+        Bitmap mBitmap;
+
+        public BackgroundImageResize(Bitmap bitmap) {
+            if (bitmap != null) {
+                this.mBitmap = bitmap;
+            }
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            Toast.makeText(getActivity(), "compressing image", Toast.LENGTH_SHORT).show();
+            showProgressBar();
+        }
+
+        @Override
+        protected byte[] doInBackground(Uri... params) {
+            Log.d(TAG, "doInBackground: started.");
+
+            if (mBitmap == null) {
+                try {
+                    RotateBitmap rotateBitmap = new RotateBitmap();
+                    mBitmap = rotateBitmap.HandleSamplingAndRotationBitmap(getActivity(), params[0]);
+                } catch (IOException e) {
+                    Log.e(TAG, "doInBackground: IOException: " + e.getMessage());
+                }
+            }
+            byte[] bytes = null;
+            Log.d(TAG, "doInBackground: megabytes before compression: " + mBitmap.getByteCount() / 1000000);
+            bytes = getBytesFromBitmap(mBitmap, 100);
+            Log.d(TAG, "doInBackground: megabytes before compression: " + bytes.length / 1000000);
+            return bytes;
+        }
+
+        @Override
+        protected void onPostExecute(byte[] bytes) {
+            super.onPostExecute(bytes);
+            mUploadBytes = bytes;
+
+            //execute the upload task
+            executeUploadTask();
+
+        }
     }
 
     public static byte[] getBytesFromBitmap(Bitmap bitmap, int quality) {

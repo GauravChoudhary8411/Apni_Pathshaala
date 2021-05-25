@@ -33,7 +33,6 @@ public class SearchFragment extends Fragment {
     FirebaseRecyclerAdapter<Post,MyViewHolder> adapter;
     DatabaseReference databaseReference;
 
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
