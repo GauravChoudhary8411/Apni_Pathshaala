@@ -71,21 +71,13 @@ public class LoginActivity extends AppCompatActivity {
                 email = lemail.getText().toString();
                 password = lpassword.getText().toString();
 
-                if (TextUtils.isEmpty(email)) {
+                if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
                     lemail.setError("Required Field");
                     lemail.requestFocus();
-                    Toast.makeText(getApplicationContext(),
-                            "Please enter email!!",
-                            Toast.LENGTH_LONG)
-                            .show();
-                    return;
-                }
-
-                if (TextUtils.isEmpty(password)) {
                     lpassword.setError("Required Field");
                     lpassword.requestFocus();
                     Toast.makeText(getApplicationContext(),
-                            "Please enter password!!",
+                            "Please enter email and password!! ",
                             Toast.LENGTH_LONG)
                             .show();
                     return;
